@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    {% block style %}
+
+    {% endblock %}
+</head>
+<body>
+     <header>
+        <div class="container">
+            <nav class="nav d-flex">
+                <a href="#" class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.svg') }}" alt="Foodiee.order">
+                </a>
+                <!-- Toggle bar -->
+                <div class="burger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="navigation-bar">
+                    <ul>
+                        <li><a href="{{ url_for('Home') }}" class="active">Home</a></li>
+                        <li><a href="{{ url_for('menulist') }}">Menu</a></li>
+                        <li><a href="#about">about</a></li>
+                        <li><a href="#services">services</a></li>
+                        <li><a href="{{ url_for('login') }}">login</a></li>
+                        <li><a href="{{ url_for('savatcha') }}" class="btn book-btn">Savatga o'tish</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe/dist/gumshoe.polyfills.min.js"></script>
+    <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+        $('.js-tilt').tilt({
+            scale: 1.1
+        })
+    </script>
+</body>
+</html>

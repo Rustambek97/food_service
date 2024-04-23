@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+    <!-- menu -->
+        <section class="menu ptb-80" id="menu">
+            <div class="container">
+                <div class="section-title">
+                    <h3>Menu</h3>
+                    <h2>Popular Dishes </h2>
+                </div>
+                <div class="menu-items d-grid">
+                    <!-- item -->
+                {% for i in foodlist %}
+                    <div class="item">
+                        <img src="{{ url_for('static', filename='media-files/'+i[2]) }}" height="260px" alt="{{i[1]}}" class="img-fluid">
+                        <div class="item-content">
+                            <h4> {{i[1]}} </h4>
+                            <p>Eat luctus est vestibulum vel. Integer pulvinar <br> nibh quis diam ullamcorper,</p>
+                            <div class="action d-flex">
+
+                                <a href="{{ url_for('menudetail', id=i[0], nomi=i[1]) }}" class="cart-btn">Ko'rish</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+                <div class="view-more">
+                    <a href="#" class="btn">View more</a>
+                </div>
+            </div>
+        </section>
+{% endblock %}

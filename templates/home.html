@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Home  -->
+        <section class="home" id="home">
+            <div class="container">
+                <div class="home-wrapper d-grid">
+                    <div class="col-left">
+                        <h3>Restaurant</h3>
+                        <h1>Food <br> Service</h1>
+
+                        <p>Vestibulum sed augue ac lorem rutrum congue. Donec cursus mollis sapien, non vulputate odio
+                            congue id. Sed mattis, tortor nec facilisis laoreet, mauris magna finibus nisl, eu pulvinar
+                            erat libero in turpis. </p>
+
+                        <div class="search-food d-flex">
+                            <a href="{{ url_for('menulist') }}" class="btn"> Menu</a>
+                            <a href="#" class="btn"> Book</a>
+                        </div>
+                        <div class="social-icons d-flex">
+                            <a href="#"> <img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="facebook"></a>
+                            <a href="#"> <img src="{{ url_for('static', filename='images/twitter.svg') }}" alt="twitter"></a>
+                            <a href="#"> <img src="{{ url_for('static', filename='images/instagram.svg') }}" alt="Instagram"></a>
+                        </div>
+
+                    </div>
+                    <div class="col-right">
+                        <img data-tilt src="{{ url_for('static', filename='images/hero-img.png') }}" alt="Home image" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+{% endblock %}
+
